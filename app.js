@@ -12,6 +12,10 @@ app.get("/hello/:name", (req,res)=>{
     res.send(`Hello, ${req.params.name}`);
 });
 
+app.get("/health", (req, res)=> {
+    res.send("healthy");
+});
+
 app.listen(80, () => {
     console.log("App listening on port 80!");
   });
