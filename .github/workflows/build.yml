@@ -33,5 +33,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Install 'cdk' command
         run: npm i -g aws-cdk
+      - name: See directory structure
+        run: ls
       - name: cdk deploy
         run: cdk deploy --context stackName=$STACK_NAME --context clusterName=$CLUSTER_NAME --context serviceName=$SERVICE_NAME --context assetFolder=$DIRNAME --require-approval never
